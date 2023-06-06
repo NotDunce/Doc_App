@@ -1,4 +1,5 @@
 import 'package:doctor_application/components/tile.dart';
+import 'package:doctor_application/pages/user_form.dart';
 import 'package:flutter/material.dart';
 
 import '../components/doctor_tile.dart';
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -34,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                       height: 5,
                     ),
                     Text(
-                      "Ishan Rana",
+                      "Jae Hyun!",
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     ),
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           //How do you feel section **fix later**
@@ -123,20 +124,25 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               height: 20,
                             ),
-                            Container(
-                              child: Center(
-                                  child: Text(
-                                "Get Started",
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                              width: 150,
-                              height: 35,
-                              decoration: BoxDecoration(
-                                  color: Colors.deepPurple[300],
-                                  borderRadius: BorderRadius.circular(15)),
+                            GestureDetector(
+                              onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                                return MedicalForm();
+                              },)),
+                              child: Container(
+                                child: Center(
+                                    child: Text(
+                                  "Get Started",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                )),
+                                width: 150,
+                                height: 35,
+                                decoration: BoxDecoration(
+                                    color: Colors.deepPurple[300],
+                                    borderRadius: BorderRadius.circular(15)),
+                              ),
                             )
                           ],
                         ),
